@@ -1,0 +1,13 @@
+{
+  "name": "agas-launcher",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "git.co_agas_cli": "cd ../../public && git clone https://github.com/aurelienCastellarnau/AGAS_cli.git && cd ../src/AGAS",
+    "go.get": "go get github.com/gorilla/mux && go get github.com/go-sql-driver/mysql && go get github.com/dgrijalva/jwt-go",
+    "go.install" : "go install AGAS/AGAS",
+    "angular.build.agas": "cd ../../public/AGAS_cli && npm install && npm run build && cd ../../src/AGAS",
+    "agas.start": "cd ../../bin && AGAS.exe -config ../config/AGAS.json -root ../ -web public/AGAS_cli/dist", 
+    "agas": "npm run git.co_agas_cli && npm run go.get && npm run go.install && npm run angular.build.agas && npm run agas.start"
+  }
+}
